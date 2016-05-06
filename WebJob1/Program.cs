@@ -14,7 +14,11 @@ namespace WebJob1
         // AzureWebJobsDashboard and AzureWebJobsStorage
         static void Main()
         {
-            var host = new JobHost();
+            var config = new JobHostConfiguration
+            {
+                JobActivator = new AutofacActivator(ContainerConfig.GetContainer())
+            };
+            var host = new JobHost(config);
             // The following code ensures that the WebJob will be running continuously
             host.RunAndBlock();
         }

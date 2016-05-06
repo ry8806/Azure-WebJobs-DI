@@ -77,6 +77,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutofacActivator.cs" />
+    <Compile Include="ContainerConfig.cs" />
+    <Compile Include="Implementations\HelloGenerator.cs" />
+    <Compile Include="Implementations\IStringGenerator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Functions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
