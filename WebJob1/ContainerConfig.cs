@@ -1,9 +1,4 @@
 ﻿using Autofac;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WebJob1.Implementations;
 
 namespace WebJob1
@@ -14,8 +9,8 @@ namespace WebJob1
         {
             var builder = new ContainerBuilder();
 
-            // Register the functions class
-            //builder.RegisterType<Functions>();
+            // Register the functions class - WebJobs will discover our triggers this way
+            builder.RegisterType<Functions>();
 
             builder.RegisterType<HelloGenerator>().As<IStringGenerator>().SingleInstance();
 
